@@ -3,19 +3,17 @@ Summary(pl):	Kolorowy "tail"
 Name:		colortail
 Version:	0.3.0
 Release:	1
-Source0:	%{name}-%{version}.tar.gz
-URL:		http://www.student.hk-r.se/~pt98jan/colortail.html
-Copyright:	GNU
+License:	GNU
 Group:		Applications/Text
 Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
 Group(pl):	Aplikacje/Tekst
+Source0:	http://www.student.hk-r.se/~pt98jan/%{name}-%{version}.tar.gz
+URL:		http://www.student.hk-r.se/~pt98jan/colortail.html
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_sysconfdir	/etc
 
 %description
 Colortail works like tail but can optionally read a color config file,
@@ -23,7 +21,7 @@ where it's specified which patterns result in which colors.
 
 %description -l pl
 Colortail dzia³a na podobne zasadzie jak zwyk³y tail, z t± ró¿nic±, ¿e
-potrafi wy¶wietlaæ kolorowy tekst w zale¿no¶ci od ustwieñ w pliku
+potrafi wy¶wietlaæ kolorowy tekst w zale¿no¶ci od ustawieñ w pliku
 konfiguracyjnym.
 
 %prep
