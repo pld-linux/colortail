@@ -23,12 +23,13 @@ konfiguracyjnym.
 
 %prep
 %setup -q
-%build
 
-aclocal
+%build
+rm -f missing
+%{__aclocal}
 %{__autoconf}
 %{__automake}
-autoheader
+%{__autoheader}
 CXXFLAGS="%{rpmcflags} -fno-exceptions -fno-rtti"
 %configure \
 	--enable-ext_regex
@@ -42,13 +43,11 @@ install -d $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
 
 install example-conf/conf.* $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
 
-gzip -9nf ChangeLog README TODO
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %config(noreplace) %verify(not mtime size md5)  %{_sysconfdir}/%{name}/*
