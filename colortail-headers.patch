@@ -1,0 +1,10 @@
+--- colortail-0.3.0/CfgFileParser.h~	Sun May 11 21:30:17 2003
++++ colortail-0.3.0/CfgFileParser.h	Sun May 11 21:31:58 2003
+@@ -26,6 +26,7 @@
+ #include <sys/types.h>
+ #include <regex.h>
+ #include <fstream.h>
++#include <iostream.h>
+ 
+ #ifdef HAVE_GNUREGEX_H
+ # include <gnuregex.h>
