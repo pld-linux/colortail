@@ -2,10 +2,11 @@ Summary:	Colored "tail"
 Summary(pl):	Kolorowy "tail"
 Name:		colortail
 Version:	0.3.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Text
 Source0:	http://www.student.hk-r.se/~pt98jan/%{name}-%{version}.tar.gz
+Patch0:		%{name}-headers.patch
 URL:		http://www.student.hk-r.se/~pt98jan/colortail.html
 BuildRequires:	automake
 BuildRequires:	autoconf
@@ -23,6 +24,7 @@ konfiguracyjnym.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 rm -f missing
