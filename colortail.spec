@@ -30,7 +30,7 @@ konfiguracyjnym.
 LDFLAGS="-s"; export LDFLAGS
 %configure --enable-ext_regex
 
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
