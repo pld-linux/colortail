@@ -29,9 +29,8 @@ konfiguracyjnym.
 
 aclocal
 autoconf
-automake
+automake --add-missing
 autoheader
-LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--enable-ext_regex
 %{__make}
