@@ -1,8 +1,8 @@
 Summary:	Colored "tail"
 Summary(pl):	Kolorowy "Tail"
 Name:		colortail
-Version:	0.2.0
-Release:	2
+Version:	0.3.0
+Release:	1
 Source0:	%{name}-%{version}.tar.gz
 URL:		http://www.student.hk-r.se/~pt98jan/colortail.html
 Copyright:	GNU
@@ -12,10 +12,11 @@ Group(pl):	Narzêdzia/Tekst
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc
+%define		no_install_post_compress_docs
 
 %description
-Colortail works like tail but can optionally read a color config file.
-Where it's specified which patterns result in which colors.
+Colortail works like tail but can optionally read a color config file,
+where it's specified which patterns result in which colors.
 
 %description -l pl
 Colortail dzia³a na podobne zasadzie jak zwyk³y tail, z t± ró¿nic±, ¿e
@@ -24,20 +25,25 @@ konfiguracyjnym.
 
 %prep
 %setup -q
-
 %build
+
+aclocal
+autoconf
+automake
+autoheader
+LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--enable-ext_regex
 %{__make}
 
 %install
+
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_sysconfdir}}
+%{__make} install DESTDIR="$RPM_BUILD_ROOT"
 
-install colortail	$RPM_BUILD_ROOT%{_bindir}
-install colortail.1	$RPM_BUILD_ROOT%{_mandir}/man1
-install CONFIG		$RPM_BUILD_ROOT%{_sysconfdir}/colortail
+install -d $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
+install example-conf/conf.* $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
 
 gzip -9nf ChangeLog README TODO
 %clean
@@ -47,5 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc {ChangeLog,README,TODO}.gz
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
-%config(noreplace) %verify(not mtime size md5)  %{_sysconfdir}/*
+%config(noreplace) %verify(not mtime size md5)  %{_sysconfdir}/%{name}/*
