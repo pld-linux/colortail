@@ -5,9 +5,6 @@ Version:	0.3.0
 Release:	1
 License:	GNU
 Group:		Applications/Text
-Group(de):	Applikationen/Text
-Group(fr):	Utilitaires/Texte
-Group(pl):	Aplikacje/Tekst
 Source0:	http://www.student.hk-r.se/~pt98jan/%{name}-%{version}.tar.gz
 URL:		http://www.student.hk-r.se/~pt98jan/colortail.html
 BuildRequires:	automake
