@@ -7,7 +7,7 @@ Source:		%{name}-%{version}.tar.gz
 URL:		http://www.student.hk-r.se/~pt98jan/colortail.html
 Copyright:	GNU
 Group:		System/utilities
-BuildRoot:	/tmp/%{name}-%{version}-%{release}-buildroot
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc
 
