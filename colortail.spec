@@ -9,6 +9,8 @@ Copyright:	GNU
 Group:		Utilities/Text
 Group(fr):	Utilitaires/Texte
 Group(pl):	Narzêdzia/Tekst
+BuildRequires:	automake
+BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc
@@ -36,20 +38,20 @@ autoheader
 %{__make}
 
 %install
-
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
 
 %{__make} install DESTDIR="$RPM_BUILD_ROOT"
 
-install -d $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
 install example-conf/conf.* $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
 
 gzip -9nf ChangeLog README TODO
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {ChangeLog,README,TODO}.gz
+%doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %config(noreplace) %verify(not mtime size md5)  %{_sysconfdir}/%{name}/*
