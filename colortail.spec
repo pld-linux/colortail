@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		Applications/Text
 Source0:	http://www.student.hk-r.se/~pt98jan/%{name}-%{version}.tar.gz
+# Source0-md5:	2589d3e372080f4052d1cc0d6550508f
 Patch0:		%{name}-headers.patch
 URL:		http://www.student.hk-r.se/~pt98jan/colortail.html
 BuildRequires:	automake
