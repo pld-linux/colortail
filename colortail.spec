@@ -1,14 +1,15 @@
 Summary:	Colored "tail"
-Summary(pl):	Kolorowy "Tail"
+Summary(pl):	Kolorowy "tail"
 Name:		colortail
 Version:	0.3.0
 Release:	1
 Source0:	%{name}-%{version}.tar.gz
 URL:		http://www.student.hk-r.se/~pt98jan/colortail.html
 Copyright:	GNU
-Group:		Utilities/Text
+Group:		Applications/Text
+Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
-Group(pl):	Narzêdzia/Tekst
+Group(pl):	Aplikacje/Tekst
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libstdc++-devel
@@ -33,7 +34,7 @@ aclocal
 autoconf
 automake -a -c
 autoheader
-CXXFLAGS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS -fno-exceptions -fno-rtti}"
+CXXFLAGS="%{rpmcflags} -fno-exceptions -fno-rtti"
 %configure \
 	--enable-ext_regex
 %{__make}
