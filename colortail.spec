@@ -26,10 +26,8 @@ konfiguracyjnym.
 %setup -q
 
 %build
-
-LDFLAGS="-s"; export LDFLAGS
-%configure --enable-ext_regex
-
+%configure \
+	--enable-ext_regex
 %{__make}
 
 %install
@@ -41,8 +39,7 @@ install colortail	$RPM_BUILD_ROOT%{_bindir}
 install colortail.1	$RPM_BUILD_ROOT%{_mandir}/man1
 install CONFIG		$RPM_BUILD_ROOT%{_sysconfdir}/colortail
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	ChangeLog README TODO
+gzip -9nf ChangeLog README TODO
 %clean
 rm -rf $RPM_BUILD_ROOT
 
