@@ -26,8 +26,8 @@ konfiguracyjnym.
 %build
 
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 autoheader
 CXXFLAGS="%{rpmcflags} -fno-exceptions -fno-rtti"
 %configure \
