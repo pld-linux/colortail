@@ -2,7 +2,7 @@ Summary:	Colored "tail"
 Summary(pl):	Kolorowy "tail"
 Name:		colortail
 Version:	0.3.0
-Release:	4
+Release:	5
 License:	GPL
 Group:		Applications/Text
 Source0:	http://www.student.hk-r.se/~pt98jan/%{name}-%{version}.tar.gz
