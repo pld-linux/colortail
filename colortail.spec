@@ -11,10 +11,10 @@ Group(fr):	Utilitaires/Texte
 Group(pl):	Narzêdzia/Tekst
 BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc
-%define		no_install_post_compress_docs
 
 %description
 Colortail works like tail but can optionally read a color config file,
@@ -31,8 +31,9 @@ konfiguracyjnym.
 
 aclocal
 autoconf
-automake --add-missing
+automake -a -c
 autoheader
+CXXFLAGS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS -fno-exceptions -fno-rtti}"
 %configure \
 	--enable-ext_regex
 %{__make}
