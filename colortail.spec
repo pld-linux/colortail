@@ -42,7 +42,8 @@ CXXFLAGS="%{rpmcflags} -fno-exceptions -fno-rtti"
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
 
-%{__make} install DESTDIR="$RPM_BUILD_ROOT"
+%{__make} install \
+	DESTDIR="$RPM_BUILD_ROOT"
 
 install example-conf/conf.* $RPM_BUILD_ROOT%{_sysconfdir}/%{name}
 
