@@ -2,7 +2,7 @@ Summary:	Colored "tail"
 Summary(pl):	Kolorowy "tail"
 Name:		colortail
 Version:	0.3.0
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications/Text
 Source0:	http://www.student.hk-r.se/~pt98jan/%{name}-%{version}.tar.gz
@@ -54,4 +54,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
+%dir %{_sysconfdir}/%{name}
 %config(noreplace) %verify(not mtime size md5)  %{_sysconfdir}/%{name}/*
