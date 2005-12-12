@@ -9,8 +9,8 @@ Source0:	http://www.student.hk-r.se/~pt98jan/%{name}-%{version}.tar.gz
 # Source0-md5:	2589d3e372080f4052d1cc0d6550508f
 Patch0:		%{name}-gcc3.patch
 URL:		http://www.student.hk-r.se/~pt98jan/colortail.html
-BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,4 +55,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %dir %{_sysconfdir}/%{name}
-%config(noreplace) %verify(not mtime size md5)  %{_sysconfdir}/%{name}/*
+%config(noreplace) %verify(not md5 mtime size)  %{_sysconfdir}/%{name}/*
