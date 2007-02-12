@@ -1,5 +1,5 @@
 Summary:	Colored "tail"
-Summary(pl):	Kolorowy "tail"
+Summary(pl.UTF-8):   Kolorowy "tail"
 Name:		colortail
 Version:	0.3.0
 Release:	6
@@ -18,9 +18,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Colortail works like tail but can optionally read a color config file,
 where it's specified which patterns result in which colors.
 
-%description -l pl
-Colortail dzia³a na podobne zasadzie jak zwyk³y tail, z t± ró¿nic±, ¿e
-potrafi wy¶wietlaæ kolorowy tekst w zale¿no¶ci od ustawieñ w pliku
+%description -l pl.UTF-8
+Colortail dziaÅ‚a na podobne zasadzie jak zwykÅ‚y tail, z tÄ… rÃ³Å¼nicÄ…, Å¼e
+potrafi wyÅ›wietlaÄ‡ kolorowy tekst w zaleÅ¼noÅ›ci od ustawieÅ„ w pliku
 konfiguracyjnym.
 
 %prep
