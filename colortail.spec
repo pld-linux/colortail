@@ -1,5 +1,5 @@
 Summary:	Colored "tail"
-Summary(pl.UTF-8):   Kolorowy "tail"
+Summary(pl.UTF-8):	Kolorowy "tail"
 Name:		colortail
 Version:	0.3.0
 Release:	6
